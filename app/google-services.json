@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "360742550683",
+    "project_id": "society-80bac",
+    "storage_bucket": "society-80bac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360742550683:android:0a988eab6f2a1c71479a3e",
+        "android_client_info": {
+          "package_name": "com.society"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfdnDoyo5VliuAM61NlHPEFU9c0H6CFC8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
