@@ -46,7 +46,6 @@ import com.society.viewModel.AuthViewModel
 
 @Composable
 fun DashboardScreen(navController: NavHostController) {
-    val viewModel: AuthViewModel = viewModel()
     var userName by remember { mutableStateOf<String?>("User!") }
 
     // Get current user from FirebaseAuth
