@@ -8,6 +8,8 @@ Features:
 - Event scheduling 
 - Payment gateways
 - Society tour
+- Authentication
+- Realtime fire database
 
 Architecture:
 The app follows a MVVM (Model-View-ViewModel) architecture, with Jetpack Compose for UI and Firebase as the backend service for authentication, real-time database, and storage.
@@ -28,6 +30,41 @@ Usage:
 
 Contributing:
 Contributions are welcome! Please fork the repository and create a pull request for any changes you'd like to make.
+
+
+How to Contribute:
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Make your changes.
+4. Commit your changes with clear and concise commit messages.
+5. Push the changes to your fork.
+6. Submit a pull request to the main repository.
+
+Coding Standards:
+- Follow Kotlin coding conventions.
+- Use meaningful variable and function names.
+- Write comments to explain complex logic.
+
+Folder Structure:
+- `app/`: Contains the Android project files.
+- `data/`: Contains repository classes and data models.
+- `ui/`: Contains the UI components, organized by feature.
+- `viewmodel/`: Contains ViewModel classes that interact with repositories.
+- `repository/`: Handles data operations (local and remote).
+- `utils/`: Contains utility classes and extension functions.
+
+Firebase Setup:
+- Authentication: Using FirebaseAuth for user authentication.
+- Realtime Database: Structure of the database and how data is retrieved and stored.
+- Storage: Handling of user-uploaded files and media.
+
+  Endpoints:
+  - Example: `/events`: Retrieves a list of upcoming events.
+
+  
+
+
+
 
 
 
