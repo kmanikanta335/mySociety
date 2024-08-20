@@ -60,7 +60,7 @@ fun DashboardScreen(navController: NavHostController) {
     ) {
         // Background image
         Image(
-            painter = painterResource(R.drawable.cityspace), // Replace with the image source
+            painter = painterResource(R.drawable.cityspace),
             contentDescription = null,
             modifier = Modifier.fillMaxSize(),
             alignment = Alignment.TopCenter
@@ -105,7 +105,7 @@ fun DashboardScreen(navController: NavHostController) {
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 val options = listOf(
-                    "My Society" to R.drawable.mys to "societies", // Replace with your drawable resources
+                    "My Society" to R.drawable.mys to "societies",
                     "Events" to R.drawable.event to "events",
                     "Payment" to R.drawable.pay to "payment",
                     "Announcement" to R.drawable.ann to "announcements"

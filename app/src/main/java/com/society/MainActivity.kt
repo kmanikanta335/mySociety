@@ -58,7 +58,7 @@ class MainActivity : ComponentActivity() {
             }
 
             SocietyTheme(darkTheme = false) {
-                val navController = rememberNavController()
+                 val navController = rememberNavController()
                     // A surface container using the 'background' color from the theme
                     Scaffold(
                         topBar = {
@@ -77,7 +77,7 @@ class MainActivity : ComponentActivity() {
                                     ) {
                                         Image(
                                             painter = painterResource(R.drawable.ic_home),
-                                            contentDescription = "Niramaya Logo",
+                                            contentDescription = "app Logo",
                                             modifier = Modifier
                                                 .height(60.dp)
                                                 .padding(end = 8.dp), // Add some space between the image and text
@@ -99,12 +99,12 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(paddingValues)
                         ) {
                             Image(
-                                painter = painterResource(R.drawable.background_image), // Replace with your image resource
+                                painter = painterResource(R.drawable.background_image),
                                 contentDescription = "Background Image",
                                 modifier = Modifier.fillMaxSize(),
                                 contentScale = ContentScale.FillBounds
                             )
-                            // Pass the lambda to StartScreen
+
                             NavGraph(navController = navController)
                         }
                     }

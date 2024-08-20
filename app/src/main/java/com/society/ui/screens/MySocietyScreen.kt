@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun MySocietyScreen() {
     val images = listOf(
-        R.drawable.img1, // Replace with your drawable resources
+        R.drawable.img1,
         R.drawable.img2,
         R.drawable.img3,
         R.drawable.img4
@@ -71,7 +71,7 @@ fun MySocietyScreen() {
         ) {
             Text("My Society", style = MaterialTheme.typography.bodyLarge,color = Color.White)
             Text(color = Color.White,text ="My Society typically refers to a residential community or housing society, which is a group of individuals who live together in a shared residential area. These societies are common in urban areas and often consist of multiple housing units, such as apartments or townhouses, along with shared amenities and common areas.")
-            // Add more content as needed
+
         }
     }
 

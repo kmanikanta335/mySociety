@@ -20,12 +20,12 @@ class EventsRepository {
                 document.toObject(Event::class.java).copy(id = document.id)
             }.filter { event ->
                  print(event.name)
-                // Assuming you have a date parsing logic to determine if it's an upcoming event
-                event.isUpcoming // You can replace this with your date logic
+
+                event.isUpcoming // filter all the events which are isUpcoming = true
             }
         } catch (e: Exception) {
             Log.d("NO storage ",""+e)
-            emptyList() // Handle the error accordingly
+            emptyList() // return the empty list
         }
     }
 }

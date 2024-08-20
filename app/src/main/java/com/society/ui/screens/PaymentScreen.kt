@@ -58,7 +58,7 @@ fun PaymentScreen(
             viewModel.handlePaymentResult(result.data)
         }
 
-     val textFieldColors = TextFieldDefaults.colors(
+      val textFieldColors = TextFieldDefaults.colors(
         focusedIndicatorColor = Color.White,
         unfocusedIndicatorColor = Color.Black,
         disabledIndicatorColor = Color.Black

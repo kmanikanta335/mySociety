@@ -22,7 +22,7 @@ fun SplashScreen() {
         contentAlignment = Alignment.Center
     ) {
         Image(
-            painter = painterResource(id = R.drawable.app_logo), // Replace with your logo
+            painter = painterResource(id = R.drawable.app_logo),
             contentDescription = "App Logo",
             modifier = Modifier.size(150.dp)
         )
