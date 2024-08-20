@@ -142,9 +142,12 @@ fun LoginScreen(navController: NavHostController) {
             // Register Button
             Button(
                 onClick = {
-
-                    viewModel.login(email, password)
-                    user = true
+                    if(email!="" && password!="") {
+                        viewModel.login(email, password)
+                        user = true
+                    }else{
+                        Toast.makeText(context, "enter details", Toast.LENGTH_SHORT).show()
+                    }
 
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.red)),
