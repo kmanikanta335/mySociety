@@ -11,6 +11,13 @@ Features:
 - Authentication
 - Realtime fire database
 
+Screeshots:
+![collage](https://github.com/user-attachments/assets/7b834ce0-9f1d-4dae-9fc0-05d5a42b8f5e)
+
+
+
+
+
 Architecture:
 The app follows a MVVM (Model-View-ViewModel) architecture, with Jetpack Compose for UI and Firebase as the backend service for authentication, real-time database, and storage.
 
@@ -26,7 +33,7 @@ Usage:
 - Navigate through the app using the bottom navigation bar.
 - Create and manage events from the Events screen.
 - Post and view announcements in the Announcements section.
-- Engage with other residents in the Community Forum.
+- Enables the onlines transaction with in the app.
 
 Contributing:
 Contributions are welcome! Please fork the repository and create a pull request for any changes you'd like to make.
