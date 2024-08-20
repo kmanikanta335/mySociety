@@ -22,6 +22,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,8 +40,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.google.firebase.FirebaseApp
 import com.society.ui.NavGraph
+import com.society.ui.screens.SplashScreen
 import com.society.ui.screens.StartScreen
 import com.society.ui.theme.SocietyTheme
+import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -56,55 +59,56 @@ class MainActivity : ComponentActivity() {
 
             SocietyTheme(darkTheme = false) {
                 val navController = rememberNavController()
+                    // A surface container using the 'background' color from the theme
+                    Scaffold(
+                        topBar = {
+                            CenterAlignedTopAppBar(
+                                colors = TopAppBarDefaults.topAppBarColors(
+                                    containerColor = colorResource(id = R.color.red),
+                                    titleContentColor = Color.Black,
+                                ),
+                                modifier = Modifier,
 
-                // A surface container using the 'background' color from the theme
-                Scaffold(
-                    topBar = {
-                        CenterAlignedTopAppBar(
-                            colors = TopAppBarDefaults.topAppBarColors(
-                                containerColor = colorResource(id = R.color.red),
-                                titleContentColor = Color.Black,
-                            ),
-                            modifier = Modifier,
+                                title = {
+                                    Row(
+                                        verticalAlignment = Alignment.CenterVertically,
+                                        horizontalArrangement = Arrangement.Center, // Center items horizontally within the Row
+                                        modifier = Modifier.fillMaxWidth() // Make the Row take up the full width of the TopAppBar
+                                    ) {
+                                        Image(
+                                            painter = painterResource(R.drawable.ic_home),
+                                            contentDescription = "Niramaya Logo",
+                                            modifier = Modifier
+                                                .height(60.dp)
+                                                .padding(end = 8.dp), // Add some space between the image and text
+                                        )
+                                        Text(
+                                            text = "MY SOCIETY",
+                                            fontSize = 28.sp,
+                                            color = Color.White,
+                                            fontWeight = FontWeight.Bold,
+                                        )
+                                    }
 
-                            title = {
-                                Row(
-                                    verticalAlignment = Alignment.CenterVertically,
-                                    horizontalArrangement = Arrangement.Center, // Center items horizontally within the Row
-                                    modifier = Modifier.fillMaxWidth() // Make the Row take up the full width of the TopAppBar
-                                ) {
-                                    Image(
-                                        painter = painterResource(R.drawable.ic_home),
-                                        contentDescription = "Niramaya Logo",
-                                        modifier = Modifier
-                                            .height(60.dp)
-                                            .padding(end = 8.dp), // Add some space between the image and text
-                                    )
-                                    Text(
-                                        text = "MY SOCIETY",
-                                        fontSize = 28.sp,
-                                        color = Color.White,
-                                        fontWeight = FontWeight.Bold,
-                                    )
                                 }
+                            )
 
-                            }
-                        )
-
-                    },
+                        },
                     ) { paddingValues ->
-                    Box(
-                        modifier = Modifier.padding(paddingValues)
-                    ) {
-                        Image(
-                            painter = painterResource(R.drawable.background_image), // Replace with your image resource
-                            contentDescription = "Background Image",
-                            modifier = Modifier.fillMaxSize(),
-                            contentScale = ContentScale.FillBounds
-                        )
-                        // Pass the lambda to StartScreen
-                        NavGraph(navController = navController)                    }
-                }
+                        Box(
+                            modifier = Modifier.padding(paddingValues)
+                        ) {
+                            Image(
+                                painter = painterResource(R.drawable.background_image), // Replace with your image resource
+                                contentDescription = "Background Image",
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.FillBounds
+                            )
+                            // Pass the lambda to StartScreen
+                            NavGraph(navController = navController)
+                        }
+                    }
+
             }
         }
     }
