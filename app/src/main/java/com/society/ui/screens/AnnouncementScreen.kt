@@ -16,6 +16,10 @@ import com.society.model.Announcement
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Text
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.platform.LocalContext
+import com.society.FCM.createNotificationChannel
+import com.society.FCM.showNotification
 import com.society.repository.AnnouncementRepository
 import com.society.viewModel.AnnouncementsViewModel
 import com.society.viewModel.AnnouncementsViewModelFactory
@@ -27,6 +31,12 @@ fun AnnouncementScreen(repository: AnnouncementRepository) {
         factory = AnnouncementsViewModelFactory(repository)
     )
     val announcements by viewModel.announcements.collectAsState()
+    val context =LocalContext.current
+    // Create Notification Channel for Announcements
+    LaunchedEffect(Unit) {
+        createNotificationChannel(context)
+    }
+
     Column(modifier = Modifier.padding(16.dp)) {
         Text(text = "Announcements", style = MaterialTheme.typography.titleLarge)
 
@@ -36,6 +46,16 @@ fun AnnouncementScreen(repository: AnnouncementRepository) {
             items(announcements) { announcement ->
                 AnnouncementItem(announcement)
             }
+        }
+    }
+    // Trigger a notification for the latest announcement
+    announcements.lastOrNull()?.let { latestAnnouncement ->
+        LaunchedEffect(latestAnnouncement) {
+            showNotification(
+                context = context,
+                title = "Announcement",
+                body = latestAnnouncement.message
+            )
         }
     }
 }

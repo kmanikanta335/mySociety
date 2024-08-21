@@ -78,4 +78,6 @@ dependencies {
     implementation("com.google.firebase:firebase-firestore-ktx:23.0.3")
     implementation(libs.accompanist.pager)
     implementation(libs.accompanist.pager.indicators)
+    implementation ("com.google.firebase:firebase-messaging-ktx:24.0.0")
+    implementation("androidx.work:work-runtime-ktx:2.9.1")
 }
