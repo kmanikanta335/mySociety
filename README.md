@@ -4,8 +4,8 @@ Description:
 A mobile application built using Kotlin and Jetpack Compose that helps manage and streamline society-related activities. The app includes features like event scheduling, announcements, maintenance requests, payment methods, and more.
 
 Features:
-- Announcements 
-- Event scheduling 
+- Announcements and notifications
+- Event scheduling and reminders
 - Payment gateways
 - Society tour
 - Authentication
